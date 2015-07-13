@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+#
+# script to download 4560 seconds of WKCR.
+# (Bird Flight airs each weekday from 8:20 - 9:30am.)
+# (this allows three minutes of padding on either end.)
+#
+# uses `streamripper`, available via your favorite package manager
+# (I used homebrew for OS X) or on [Sourcefourge](http://sourceforge.net/projects/streamripper/)
+#
+
+# change to root of project
+cd ./$(git rev-parse --show-cdup)
+cd ./audio/birdflight/
+
+# open streamripper stream to WKCR and download for 76 minutes.
+streamripper http://kanga.college.columbia.edu:8000/ -a -A -l 4560 
